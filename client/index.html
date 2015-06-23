@@ -15,12 +15,17 @@
   <body>
     <div id="main">
       <h1>chatterbox</h1>
-      <div>Room</div>
+      <div>Add Message</div>
       <input type="text" id="message">
-      <button type="button" id="messageButton" onclick="app.send()">Message</button>
-      <select id='roomList'>
+      <button type="button" id="messageButton" onclick="app.send()">Send</button>
+      <select id='roomList' onchange="app.changeRoom()">
         <option value="lobby">Lobby</option>
       </select>
+      <select id='friendList' onchange="app.chooseFriend()">
+        <option value="noFilter">No Filter</option>
+      </select><br>
+      <input type="text" id="newRoomname">
+      <button type="button" id="createRoom" onclick="app.createRoom()">Create Room</button>
     </div>
     <div id="messageCanvas"></div>
     <script>
